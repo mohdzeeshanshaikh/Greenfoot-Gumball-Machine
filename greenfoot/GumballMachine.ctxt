@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=p\ q\ f\ i
+comment0.target=GumballMachine(Penny,\ Quarter,\ FakeQuarter,\ Inspector)
+comment1.params=
+comment1.target=GumballMachine()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ pennymoved()
+comment4.params=
+comment4.target=void\ quartermoved()
+comment5.params=
+comment5.target=void\ fakequartermoved()
+numComments=6

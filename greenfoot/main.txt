@@ -1,0 +1,154 @@
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+/**
+ * Write a description of class GumballMachine here.
+ * 
+ * @author (your name) 
+ * @version (a version number or a date)
+ */
+public class GumballMachine extends Actor
+{
+    static int gumball=10;
+    public GumballMachine()
+    {
+        GreenfootImage image = getImage() ;
+        image.scale( 250, 400 ) ; 
+
+    }
+
+    public void act() 
+    {
+        // Add your action code here.
+        int mouseX, mouseY ;
+
+        if(Greenfoot.mouseDragged(this)) {          
+            /* MouseInfo mouse = Greenfoot.getMouseInfo();  
+            mouseX=mouse.getX();  
+            mouseY=mouse.getY();  
+            setLocation(mouseX, mouseY);
+             */
+            // turncrank();
+        } 
+        pennymoved();
+        //inspector();
+        fakequartermoved();
+        quartermoved();
+
+    }
+
+    void pennymoved()
+    {
+        Actor worldActorpenny = getOneIntersectingObject(Penny.class);  
+        if (worldActorpenny != null) 
+        {  
+            
+                
+            getWorld().removeObject(worldActorpenny);  
+            getWorld().addObject(new ImageLabel("Penny Moved"), 50,100);  
+            //Penny penny;
+            //penny=new Penny();
+            
+            GreenfootImage drawedImageagain = new GreenfootImage("Pennynotaccepted.png");//the image that is drawed;  
+            getWorld().getBackground().drawImage(drawedImageagain, 600, 100);  
+
+            GreenfootImage drawedImageagain1 = new GreenfootImage("nogumforpenny.png");//the image that is drawed;  
+            getWorld().getBackground().drawImage(drawedImageagain1, 720, 330);  
+
+            GreenfootImage drawedImage = new GreenfootImage("penny.png");//the image that is drawed;  
+            drawedImage.scale( 50, 50 ) ;
+            getWorld().getBackground().drawImage(drawedImage, 70, 80);  
+
+            //getWorld().addObject(new GreenPicker(),300,200);
+            GreenfootImage pennycoin = new GreenfootImage("pennyfacenew.png");//the image that is drawed;  
+                pennycoin.scale(100,100);
+            getWorld().getBackground().drawImage(pennycoin, 180, 560);  
+            
+            GreenfootImage remove = new GreenfootImage("plain.png");//the image that is drawed;  
+                getWorld().getBackground().drawImage(remove, 820, 670);
+                
+        }
+    }
+
+    void quartermoved()
+    {
+        Actor worldActorpenny = getOneIntersectingObject(Quarter.class);  
+        if (worldActorpenny != null)
+        {  
+            getWorld().removeObject(worldActorpenny);  
+            getWorld().addObject(new ImageLabel("Quarter Moved"), 50,200);  
+
+            GreenfootImage drawedImageagain = new GreenfootImage("correctcoin.png");//the image that is drawed;  
+            getWorld().getBackground().drawImage(drawedImageagain, 600, 100);  
+
+            GreenfootImage drawedImageagain1 = new GreenfootImage("getyourgums.png");//the image that is drawed;  
+            getWorld().getBackground().drawImage(drawedImageagain1, 720, 330);  
+
+            /*if(Greenfoot.getRandomNumber(4)>1)
+            {
+            if(Greenfoot.getRandomNumber(4)>2)
+            }*/
+            //GreenfootImage remove = new GreenfootImage("plain.png");//the image that is drawed;  
+            //getWorld().getBackground().drawImage(remove, 190, 530);
+            
+            
+            GreenfootImage drawedImageagain2 = new GreenfootImage("green-gumball.png");//the image that is drawed;  
+            drawedImageagain2.scale(30,30);
+            getWorld().getBackground().drawImage(drawedImageagain2, 930, 670);
+            
+            GreenfootImage happyface = new GreenfootImage("havegumfacenew.png");//the image that is drawed;  
+            happyface.scale(90,90);
+            getWorld().getBackground().drawImage(happyface, 180, 560);
+            
+
+            if(Greenfoot.getRandomNumber(2)>0)
+            {
+
+                GreenfootImage drawedImageagain3 = new GreenfootImage("blue-gumball.png");//the image that is drawed;  
+                drawedImageagain3.scale(30,30);
+                getWorld().getBackground().drawImage(drawedImageagain3, 830, 670);
+            }
+            else
+            {
+                GreenfootImage drawedImageagain4 = new GreenfootImage("red-gumball.png");//the image that is drawed;  
+                drawedImageagain4.scale(30,30);
+                getWorld().getBackground().drawImage(drawedImageagain4, 830, 670);
+                
+
+            }
+
+        }
+    }
+
+        void fakequartermoved()
+        {
+            Actor worldActor = getOneIntersectingObject(FakeQuarter.class);  
+            if (worldActor != null) 
+            {  
+                getWorld().removeObject(worldActor);  
+                getWorld().addObject(new ImageLabel("Fake Moved"), 50,300);  
+                //GreenfootImage g = new GreenfootImage("Fake moved", 20, null, null);  
+                //setImage(g);  
+                /*GreenfootImage drawedImage = new GreenfootImage("fakequarter.png");//the image that is drawed;  
+                drawedImage.scale( 70, 70 ) ;
+                getWorld().getBackground().drawImage(drawedImage, 100, 250);  */
+                   
+                //GreenfootImage remove = new GreenfootImage("plain.png");//the image that is drawed;  
+                //remove.scale( 70, 70 ) ;
+                //getWorld().getBackground().drawImage(remove, 180, 5600);  
+
+                GreenfootImage drawedImageagain = new GreenfootImage("fakecoin.png");//the image that is drawed;  
+                getWorld().getBackground().drawImage(drawedImageagain, 600, 100);  
+
+                GreenfootImage drawedImageagain1 = new GreenfootImage("fakecoinnogum.png");//the image that is drawed;  
+                getWorld().getBackground().drawImage(drawedImageagain1, 720, 330);  
+
+                GreenfootImage remove = new GreenfootImage("plain.png");//the image that is drawed;  
+                getWorld().getBackground().drawImage(remove, 820, 670);
+                  
+                GreenfootImage fakecoin = new GreenfootImage("fakecoinnew.png");//the image that is drawed;  
+                fakecoin.scale(90,90);
+                getWorld().getBackground().drawImage(fakecoin, 180, 560);
+            
+            }
+        }
+    }

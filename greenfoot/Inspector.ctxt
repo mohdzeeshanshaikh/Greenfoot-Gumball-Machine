@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment1.params=a\ b\ c
+comment1.target=void\ hascoin(greenfoot.Actor,\ greenfoot.Actor,\ greenfoot.Actor)
+numComments=2
